@@ -1,5 +1,5 @@
 # Course List
-Chapter 1: Read Images, Videos and Webcam
+Chapter 1: Read Images, Videos and Webcam  
 Chapter 2: Basic Functions  
 Chapter 3: Resizing and Cropping  
 Chapter 4: Drawing Shapes and Texts  
