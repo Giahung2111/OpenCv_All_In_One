@@ -1,14 +1,3 @@
-# Chapter 7: Color Detection
-
-
-**HSV là gì?**
-HSV (Hue, Saturation, Value) là một không gian màu dùng để biểu diễn màu sắc:
-1. Hue (Sắc độ): Màu chính (0-360°) như đỏ, xanh, vàng...
-2. Saturation (Độ bão hòa): Mức độ "đậm nhạt" của màu (0-100%).
-3. Value (Độ sáng): Mức độ sáng tối của màu (0-100%).  
---> Được dùng nhiều trong xử lý ảnh để dễ tách màu hơn so với không gian RGB
-
-```python
 import cv2
 import numpy as np
 
@@ -58,12 +47,8 @@ cv2.createTrackbar("Value Max", "TrackBars", 255, 255, empty)
 
 
 while True:
-    img = cv2.imread("C:\Python\OpenCv_All_In_One\Data_Test\Image\Garbage_Img.png")
-    
-    # Chuyển ảnh sang không gian màu HSV để dễ dàng xử lý màu sắc.
+    img = cv2.imread(r"C:\Python\OpenCv_All_In_One\Data_Test\Image\Garbage_Img.png")    
     hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-
-    # Lấy các giá trị từ thanh trượt để điều chỉnh phạm vi màu (Hue, Saturation, Value).
     h_min = cv2.getTrackbarPos("Hue Min", "TrackBars")
     h_max = cv2.getTrackbarPos("Hue Max", "TrackBars")
     s_min = cv2.getTrackbarPos("Saturation Min", "TrackBars")
@@ -71,24 +56,13 @@ while True:
     v_min = cv2.getTrackbarPos("Value Min", "TrackBars")
     v_max = cv2.getTrackbarPos("Value Max", "TrackBars")
     print(h_min, h_max, s_min, s_max, v_min, v_max)
-    
-    # Tạo một mặt nạ (mask) để giữ lại các pixel trong phạm vi màu được chọn. Lúc này chỉ là ảnh trắng đen !!
+
     lower = np.array([h_min, s_min, v_min])
     upper = np.array([h_max, s_max, v_max])
     mask = cv2.inRange(hsv_img, lower, upper)
-
-    # Áp dụng mặt nạ vào ảnh gốc để có ảnh kết quả chỉ chứa các màu được chọn.
     imgResult = cv2.bitwise_and(img, img, mask=mask)
 
-    # In ra
     imgStack = stackImages(0.6,([img,hsv_img],[mask,imgResult]))
     cv2.imshow("Stacked Images", imgStack)
 
     cv2.waitKey(0)
-```
-
-Result: Filtered Orange Colors
----
-![alt text](image.png)
----
-
