@@ -86,7 +86,7 @@ Kết quả:
 ![alt text](image-3.png)
 ---
 
-## V. Eroded Image
+## V. Eroded Image (Xói mòn ảnh)
 **Định nghĩa:**
 Hàm cv2.erode trong OpenCV là đối ngược với cv2.dilate. Thay vì mở rộng các đối tượng sáng (hoặc trắng) trong ảnh nhị phân, erosion (xói mòn) sẽ làm giảm kích thước các đối tượng sáng, và loại bỏ các vùng nhỏ không liên tục.
 
