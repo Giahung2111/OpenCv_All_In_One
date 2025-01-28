@@ -80,8 +80,9 @@ cv2.imshow("Canny_img:", canny_img)
 cv2.imshow("Dilation_img:", dilation_img)
 cv2.waitKey(0)
 ```
----
+
 Kết quả:
+---
 ![alt text](image-3.png)
 ---
 
@@ -114,7 +115,8 @@ cv2.imshow("Dilation_img:", dilation_img)
 cv2.imshow("Eroded_img:", Eroded_img)
 cv2.waitKey(0)
 ```
----
+
 Kết quả:
+---
 ![alt text](image-4.png)
 ---
