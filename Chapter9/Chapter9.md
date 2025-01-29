@@ -21,3 +21,8 @@ for (x, y, w, h) in faces:
 cv2.imshow("Image:", img)
 cv2.waitKey(0)
 ```
+
+Result:
+---
+![alt text](image.png)
+---
